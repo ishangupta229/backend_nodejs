@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insta</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h3>
@@ -19,7 +20,7 @@
     <div>
         <% for(let post of data.posts) { %>
             <div>
-                <img src="<%= post.image %>" alt="" srcset="" style="height: 100px;width: 100px;">
+                <img id="ew" src="<%= post.image %>" alt="" srcset="">
                 <p>
                     Likes = <%= post.likes  %>  <br>
                     Comments = <%= post.comments  %> 
@@ -29,4 +30,5 @@
 
     </div>
 </body>
+<script src="../js/script.js"></script>
 </html>

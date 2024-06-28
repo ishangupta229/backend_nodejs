@@ -4,14 +4,16 @@ const app = express();
 
 let port = 3000;
 
-app.set("view engine", "ejs");
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, "/public")));
 
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
 app.get("/ig/:user" , (req,res)=> {
     let {user} = req.params;
     const indata = require("./data.json");
-    console.log(indata[user]);
+    // console.log(indata[user]);
     res.render("insta.ejs" , {data : indata[user]});
 });
 
